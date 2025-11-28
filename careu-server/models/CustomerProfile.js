@@ -9,7 +9,10 @@ const CustomerProfile = sequelize.define('CustomerProfile', {
   age: { type: DataTypes.INTEGER },
   gender: { type: DataTypes.ENUM('ชาย', 'หญิง', 'อื่นๆ') },
   occupation: { type: DataTypes.STRING },
-  id_card: { type: DataTypes.STRING },
+  id_card: {
+    type: DataTypes.STRING,
+    unique: true,
+  },
   email: { type: DataTypes.STRING },
   phone: { type: DataTypes.STRING },
   line_id: { type: DataTypes.STRING },

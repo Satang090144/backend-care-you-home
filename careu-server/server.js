@@ -20,7 +20,7 @@ readdirSync("./routes").map((r) => app.use("/api", require("./routes/" + r)));
 
 // Database connection
 sequelize
-  .sync({ alter: true })
+  .sync()
   .then(() => console.log("✅ Database Connected & Synced"))
   .catch((err) => console.error("❌ DB Connection Error:", err));
 

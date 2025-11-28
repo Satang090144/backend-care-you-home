@@ -6,6 +6,10 @@ const ProviderProfile = sequelize.define('ProviderProfile', {
   user_id: { type: DataTypes.INTEGER, allowNull: false },
   nickname: { type: DataTypes.STRING },
   full_name: { type: DataTypes.STRING },
+  id_card: {
+    type: DataTypes.STRING,
+    unique: true,
+  },
   phone: { type: DataTypes.STRING },
   email: { type: DataTypes.STRING },
   age: { type: DataTypes.INTEGER },
@@ -20,6 +24,12 @@ const ProviderProfile = sequelize.define('ProviderProfile', {
   tools: { type: DataTypes.TEXT },
   resume_link: { type: DataTypes.TEXT },
   license_link: { type: DataTypes.TEXT },
+  latitude: { type: DataTypes.FLOAT },
+  longitude: { type: DataTypes.FLOAT },
+  status: {
+    type: DataTypes.ENUM("pending", "approved", "rejected"),
+    defaultValue: "pending",
+  },
 }, {
   tableName: 'provider_profiles',
   timestamps: true,
